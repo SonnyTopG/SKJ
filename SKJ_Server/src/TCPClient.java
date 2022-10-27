@@ -4,8 +4,8 @@ import java.io.*;
 public class TCPClient {
 
     public static void main(String[] args) {
-        String address = "10.13.63.17";
-        int port = 12345;
+        String address = "0.0.0.0";
+        int port = 54441;
 
         try (Socket socket = new Socket(address,port)) {
 
