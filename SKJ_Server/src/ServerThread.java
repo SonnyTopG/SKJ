@@ -12,6 +12,10 @@ public class ServerThread extends Thread {
 
     public void run() {
         try {
+            OutputStream output = socket.getOutputStream();
+            PrintWriter ps = new PrintWriter(output, true);
+            ps.println("Hi, You're connected to the server!");
+
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
@@ -19,7 +23,6 @@ public class ServerThread extends Thread {
             while((line = in.readLine()) != null && !line.isEmpty())
             {
                 System.out.println(line);
-
             }
 
             out.println("HTTP/1.1 200 OK");

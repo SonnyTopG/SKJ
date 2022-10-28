@@ -6,7 +6,7 @@ public class TCPServer {
         ServerSocket server = null;
         Socket client = null;
         try {
-            server = new ServerSocket(0);
+            server = new ServerSocket(50856);
         }
         catch (IOException e) {
             System.out.println("Could not listen");
